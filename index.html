@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>我的网页</title>
+    <title>熙熙前端开发的自我介绍</title>
+    <meta
+      name="description"
+      content="熙熙的个人主页 · 软件工程 · 前端开发方向"
+    />
     <style>
       *,
       *::before,
@@ -103,13 +107,16 @@
 
       .hero__inner {
         display: grid;
+        max-width: 860px;
         grid-template-columns: 1fr;
         grid-template-areas: "hero__text" "avatar";
+        gap: var(--space-2);
       }
       @media (min-width: 768px) {
         .hero__inner {
-          grid-template-columns: 1fr 200px;
+          grid-template-columns: 1fr 160px;
           grid-template-areas: "hero__text avatar";
+          gap: var(--space-2);
         }
       }
       .hero__text {
@@ -144,12 +151,11 @@
 
       /*hero*/
       .hero {
-        padding: var(--space-2);
-        margin: var(--space-3);
+        padding: var(--space-4) 0;
       }
 
       .hero a {
-        color: var(--color-links);
+        color: var(--color-text);
         text-decoration: none;
       }
       img {
@@ -161,7 +167,7 @@
         display: flex;
         list-style: none; /* 去掉前面的圆点 */
         padding-left: 0;
-        gap: var(--space-2);
+        gap: var(--space-1);
       }
       .skills__list li {
         padding: 2px var(--space-3) 1px;
@@ -220,6 +226,27 @@
       .btn:hover {
         color: var(--color-link-btn-touch);
       }
+      .btn--primary {
+        display: inline-block;
+        align-self: start;
+        padding: var(--space-3) var(--space-5);
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        background: var(--color-bg-link-btn);
+        border-radius: var(--radius-body);
+        text-decoration: none;
+        transition:
+          background-color 0.2s ease,
+          transform 0.12s ease;
+      }
+      .btn--primary:hover {
+        background: #054fb6;
+      }
+      .btn--primary:active {
+        transform: scale(0.96);
+      }
+
       .link-underline {
         position: relative;
         text-decoration: none;
@@ -239,23 +266,6 @@
       .link-underline:hover::after {
         transform: scaleX(1);
         transform-origin: left;
-      }
-
-      .btn--primary {
-        align-self: start;
-        padding: var(--space-2) var(--space-4);
-        background: var(--color-bg-link-btn);
-        border-radius: var(--radius-body);
-        text-decoration: none;
-        transition:
-          background-color 0.2s ease,
-          transform 0.12s ease;
-      }
-      .btn--primary:hover {
-        background: #054fb6;
-      }
-      .btn--primary:active {
-        transform: scale(0.96);
       }
 
       .project-card--link {
@@ -303,7 +313,7 @@
       .skill-tag--dot {
         display: flex;
         align-items: center; /* 垂直居中，圆的、方的、文字都对齐 */
-        gap: 6px; /* 圆点到文字的距离 */
+        gap: var(--space-2); /* 圆点到文字的距离 */
         padding: 3px var(--space-3); /* 上下左右对称，不用再算 */
       }
 
@@ -354,25 +364,22 @@
               <a
                 href="https://github.com/YuiLcake?tab=repositories"
                 target="_blank"
-                class="link-underline"
+                class="btn btn--primary"
                 >查看项目</a
               >
             </div>
             <div class="hero__avatar">
-              <img
-                src="img/touxiang.jpg"
-                alt="熙熙的头像"
-                width="160"
-                height="200"
-              />
+              <img src="img/touxiang.jpg" alt="熙熙的头像" width="160" />
             </div>
           </header>
         </main>
         <article class="about">
           <h2>关于我</h2>
           <p>
-            自2026年起，我系统地学习前端技术，每日4-6小时的学习让我掌握前端的知识和技能，已完成15天的学习。能够复刻真实网站的站点，掌握网页样式的设计布局。毕业设计：校园活动报名管理系统（Vue
-            3 + FastAPI + MySQL），2027 年 1 月进入开发。
+            2026 年 10 月起系统学习前端，掌握 HTML 语义结构、CSS 布局（Flexbox /
+            Grid）、 响应式适配与设计令牌，能独立复刻真实站点组件。
+            毕业设计：校园活动报名管理系统（Vue 3 + FastAPI + MySQL），2027 年 1
+            月进入开发。
           </p>
         </article>
 
